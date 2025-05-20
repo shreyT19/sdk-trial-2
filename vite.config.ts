@@ -30,7 +30,7 @@ export default defineConfig({
     // Bundler Options (Rollup) - Externalize react related imports
     rollupOptions: {
       // External dependencies
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: ["react", "react-dom", "react/jsx-runtime", "tailwindcss"],
       // Output settings
       output: {
         globals: {
