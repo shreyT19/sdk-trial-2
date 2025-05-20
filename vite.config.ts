@@ -2,10 +2,22 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "node:path";
 import tsconfigPaths from "vite-tsconfig-paths";
+import dts from "vite-plugin-dts";
+import { libInjectCss } from "vite-plugin-lib-inject-css";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    tsconfigPaths(),
+    libInjectCss(),
+    dts({
+      include: ["lib"],
+      insertTypesEntry: true,
+    }),
+  ],
   build: {
     // Library settings
     lib: {
@@ -28,5 +40,6 @@ export default defineConfig({
         },
       },
     },
+    copyPublicDir: false,
   },
 });
