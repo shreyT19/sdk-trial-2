@@ -37,6 +37,7 @@ export default defineConfig({
           react: "React",
           "react-dom": "ReactDOM",
           "react/jsx-runtime": "react/jsx-runtime",
+          tailwindcss: "tailwindcss",
         },
       },
     },
